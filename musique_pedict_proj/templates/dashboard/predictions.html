@@ -1,0 +1,41 @@
+{% extends 'partials/base.html' %}
+
+		{%block title %} Liste des Predictions {%endblock%}
+
+		{% block content %}
+			<div class="container">
+				<div class="row mt-4">
+					<div class="col-md-8 offset-md-2">
+						
+						<table class="table">
+							<thead>
+							  <tr>
+								<th scope="col">sexe</th>
+                                <th scope="col">taille_doigts</th>
+                                <th scope="col">frappe</th>
+								<th scope="col">vocal</th>
+								<th scope="col">mouvement_jambes</th>
+								<th scope="col">clavier</th>
+								<th scope="col">Predictions</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  {% for data in predicted_musique%}
+							  <tr>
+								<th scope="row">{{data.name}}</th>
+								<td>{{data.sexe}}</td>
+								<td>{{data.taille_doigts}}</td>
+                                <td>{{data.frappe}}</td>
+                                <td>{{data.vocal}}</td>
+                                <td>{{data.mouvement_jambes}}</td>
+                                <td>{{data.clavier}}</td>
+								<td>{{data.predictions}}</td>
+							  </tr>
+							  {% endfor %}
+							</tbody>
+						  </table>
+
+					</div>
+				</div>
+			</div>
+		{%endblock%}
